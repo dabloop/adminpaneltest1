@@ -1,0 +1,125 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal {
+    background: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #0062d3;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+.modal-form input, .modal-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.modal-form input:disabled, .modal-form select:disabled {
+    background-color: #666; /* Disabled color */
+    color: #ccc; /* Disabled text color */
+    cursor: not-allowed;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-button, .submit-button, .inside-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.cancel-button {
+    background-color: #808080;
+    color: white;
+}
+
+.submit-button {
+    background-color: #0062d3;
+    color: white;
+}
+
+.inside-button {
+    background-color: #990000;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #7a7a7a;
+}
+
+.submit-button:hover {
+    background-color: #004797;
+}
+
+.inside-button:hover {
+    background-color: rgb(104, 0, 0);
+}
+
+
+.error-text{
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+}

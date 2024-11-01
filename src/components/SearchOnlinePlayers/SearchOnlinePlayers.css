@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #181a1b;
+    color: #ccc;
+}
+
+.App {
+    display: flex;
+    min-width: 100%;
+}
+
+.main-content {
+    margin-left: 250px;
+    margin-top: 20px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+/* 
+@media (max-width: 768px) {
+    .main-content{
+        min-height: 1vh;
+        width: calc(100% - 600px);
+        margin-right: 360px;
+        margin-bottom: 110px;
+        padding: 3px;
+    }
+    *{
+        font-size: 10px;
+    }
+  }
+@media (max-width: 640px) {
+    .main-content{
+        min-height: 100vh;
+        width: calc(100% - 650px);
+        margin-right: 320px;
+        margin-bottom: 110px;
+        padding: 3px;
+    }
+    *{
+        font-size: 10px;
+    }
+  }
+
+@media (max-width: 430px) {
+.main-content{
+    min-height: 100vh;
+    width: calc(100% - 500px);
+    margin-right: 140px;
+    margin-top: -10px;
+    padding: 3px;
+}
+*{
+    font-size: 10px;
+}
+}
+@media (max-width: 414px) {
+    .main-content{
+        min-height: 100vh;
+        width: calc(100% - 530px);
+        margin-right: 130px;
+        margin-top: -10px;
+        padding: 3px;
+    }
+    *{
+        font-size: 10px;
+    }
+  }
+@media (max-width: 375px) {
+    .main-content{
+        min-height: 100vh;
+        width: calc(100% - 530px);
+        margin-right: 130px;
+        margin-bottom: 110px;
+        padding: 3px;
+    }
+    *{
+        font-size: 10px;
+    }
+  }
+ */

@@ -1,0 +1,162 @@
+/* Container for stacking multiple popups */
+.log-popup-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* Log Popup */
+.log-popup {
+    width: 400px;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    animation: popup 0.5s ease forwards, popoff 0.5s ease 4.5s forwards;
+}
+
+.log-popup.success { background: #333; border-left: 5px solid #28a745;}
+.log-popup.error { background: #333; border-left: 5px solid #dc3545; }
+.log-popup.info { background: #333; border-left: 5px solid #007bff; }
+.log-popup.other { background: #333; border-left: 5px solid #f8f9fa;; }
+/* .log-popup.success { background: linear-gradient(90deg, #28a745 8px, #333 8px); }
+.log-popup.error { background: linear-gradient(90deg, #dc3545 8px, #333 8px); }
+.log-popup.info { background: linear-gradient(90deg, #007bff 8px, #333 8px); }
+.log-popup.other { background: linear-gradient(90deg, #f8f9fa 8px, #333 8px); } */
+
+
+/* Popup Content */
+.log-popup-content h1 {
+    font-size: 18px;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+}
+.log-popup-content hr {
+    border: none;
+    border-top: 1px solid #fff;
+    margin: 5px 0;
+}
+.log-popup-content p { font-size: 14px; }
+
+/* Keyframe animations */
+@keyframes popup { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } }
+@keyframes popoff { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(100%); } }
+
+/* Full View Logs */
+.full-view-logs {
+    padding: 20px;
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    background-color: #1f2127;
+    border-left: 3px solid #4f91ff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-height: 120vh;
+    color: #4f91ff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.full-view-logs h2 { font-size: 24px; margin-bottom: 20px; color: #4f91ff; }
+
+/* Individual log item */
+.log-item {
+    cursor: pointer;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #283046;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    border-right: 3px solid #fff;
+}
+
+.log-item:hover { transform: scale(1.02); }
+.log-item h3 { font-size: 18px; color: #4f91ff; }
+.log-item p { font-size: 14px; color: #ccc; margin: 5px 0; }
+.log-item small { color: #aaa; font-size: 12px; align-self: flex-end; font-style: italic; }
+
+/* Navigation buttons */
+.log-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.log-navigation button {
+    background-color: #4f91ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.log-navigation button:hover { background-color: #3a65af; }
+.log-navigation button:disabled { background-color: #353535; cursor: default; }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .full-view-logs {
+        padding: 15px;
+        width: 90%;
+    }
+    .log-item { padding: 15px; }
+    .log-popup { width: 300px; }
+}
+
+@media (max-width: 768px) {
+    .full-view-logs {
+        width: 100%;
+        padding: 10px;
+    }
+    .log-item {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .log-popup {
+        width: 250px;
+        padding: 15px;
+    }
+    .log-navigation button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .full-view-logs{
+        margin-top: 10%;
+    }
+    .full-view-logs h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .log-item h3 {
+        font-size: 16px;
+    }
+    .log-item p,
+    .log-item small {
+        font-size: 12px;
+    }
+    .log-popup {
+        width: 100%;
+        max-width: 220px;
+    }
+    .log-navigation button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

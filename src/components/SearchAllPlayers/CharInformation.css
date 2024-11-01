@@ -1,0 +1,173 @@
+.information-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #1f2127;
+    border-left: 3px solid #4f91ff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* Responsive layout: switches to 1 column on smaller screens */
+@media (max-width: 768px) {
+    .information-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* information-box styling with only horizontal scrollbar */
+.information-box {
+    background-color: #283046;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%; /* Ensures it takes up full available width */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.information-box h3 {
+    color: #006eff;
+}
+
+.information-box table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    overflow-x: auto;
+}
+
+.information-box td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.information-box td:first-child {
+    font-weight: bold;
+    color: #aaa;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #262837;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.input, .select {
+    flex-grow: 1;
+    min-width: 250px;
+    padding: 16px 10px 8px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #C0C0C0;
+    border: none;
+    outline: none;
+    appearance: none;
+    white-space: nowrap;
+}
+
+/* Floating label adjustments */
+.floating-label {
+    position: absolute;
+    left: 12px;
+    color: #4f91ff;
+    font-size: 1.2rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input:focus + .floating-label,
+.input[value]:not([value=""]) + .floating-label, /* Detects non-empty value */
+.select:focus + .floating-label,
+.select:not([value=""]) + .floating-label {
+    font-size: 0.63rem;
+    top: 4px;
+    transform: translateY(0);
+}
+
+/* .input:focus + .floating-label,
+.input:not(:placeholder-shown) + .floating-label,
+.select:focus + .floating-label,
+.select:not([value=""]) + .floating-label {
+    font-size: 0.63rem;
+    color: #4f91ff;
+    top: 4px;
+    transform: translateY(0);
+} */
+
+/* Hover underline adjustments */
+.hover-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.input-wrapper:hover .hover-underline {
+    opacity: 1;
+}
+
+.input-wrapper select {
+    background-color: #262837;
+    transition: all ease 0.3s;
+    padding-bottom: 10px; 
+}
+
+/* Underline transition for focus */
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #4f91ff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.input:focus ~ .underline,
+.select:focus ~ .underline {
+    transform: scaleX(1);
+}
+
+/* Button styling */
+.information-box button {
+    background-color: #006eff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.information-box button:hover {
+    background-color: #005cd4;
+    /* transform: scale(1.04); */
+}
+
+.actuanButtonCollector {
+    display: flex;
+    gap: 10px;
+    /* align-items: center; */
+}
+
+

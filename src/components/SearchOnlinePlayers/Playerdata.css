@@ -1,0 +1,260 @@
+.generalInfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    background-color: rgb(77, 77, 77);
+    border-radius: 20px;
+}
+
+.grid-item {
+    padding: 20px;
+    text-align: center;
+}
+
+.player-data {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.player-data h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #0062d3;
+    text-align: center;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0062d3;
+    text-align: center;
+}
+
+.info-box p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.player-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.player-table th, .player-table td {
+    padding: 10px;
+    border: 1px solid #444;
+    text-align: center;
+    color: #fff;
+}
+
+.player-table th {
+    background-color: #333;
+}
+
+.player-table tbody tr:hover {
+    background-color: #444;
+    cursor: pointer;
+}
+.player-table tbody td a{
+    color: #fff;
+    padding: 8px;
+    text-align: left;
+    text-decoration: none;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.pagination button {
+    background-color: #808080;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background-color: #7a7a7a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:disabled {
+    background-color: #353535;
+    cursor: default;
+}
+
+.link-box {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease-in-out;
+    scale: .8;
+}
+
+.link-box:hover {
+    background-color: #474747;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    text-decoration: none;
+    color: inherit; 
+    transform: scale(1.1);
+}
+
+.link-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0062d3;
+    text-align: center;
+}
+
+.link-box p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+
+
+
+/* .player-data {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+} */
+
+/* .player-data h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ff4c4c;
+    text-align: center;
+} */
+
+.player-data .search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.player-data .search-bar .search-filter {
+    display: flex;
+    gap: 20px; /* Adjust the gap value to create space between the input and select */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Optional: Add some bottom margin to separate from the table */
+}
+
+.player-data .search-bar .entries {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-data .search-bar select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+}
+
+.player-data .search-bar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    width: 300px;
+}
+
+
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.info-box {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.generalInfo .info-box {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+.info-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0062d3;
+    text-align: center;
+}
+
+.info-box p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.info-box button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0062d3;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+

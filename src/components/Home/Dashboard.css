@@ -1,0 +1,61 @@
+.dashboard {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4f91ff;
+}
+
+.dashboard p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    flex: 1;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #4f91ff;
+}
+
+.stat-box p {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 24px;
+    color: #4f91ff;
+}
+
+.coming-soon {
+    font-size: 14px;
+    color: #4f91ff;
+    text-align: center;
+}
+

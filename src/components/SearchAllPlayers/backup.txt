@@ -1,0 +1,96 @@
+import React, { useState, useEffect } from 'react';
+import getData from '../../hooks/getData';
+import useAuth from '../../hooks/useAuth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleInfo, faAddressCard, faLandmark, faCar } from '@fortawesome/free-solid-svg-icons';
+import '../../index.css'; // Global CSS file
+// import './CharInformation.css'; // Customized CSS with !important styles
+
+function ShowCharacterInformation({ selectedCharachter, discord, handleOpenModal }) {
+    const [vehicles, setVehicles] = useState([]);
+    const { auth } = useAuth();
+
+    useEffect(() => {
+        const fetchVehicles = async () => {
+            try {
+                const getUserVehicleData = [
+                    { name: "gtr", plate: "1da23dk" },
+                    { name: "s100rr", plate: "asdfg" },
+                    { name: "supra", plate: "kjhgfd" }
+                ];
+                setVehicles(getUserVehicleData);
+            } catch (error) {
+                console.error("Failed to fetch vehicles:", error);
+            }
+        };
+        if (selectedCharachter) fetchVehicles();
+    }, [selectedCharachter, auth]);
+
+    return (
+        <div className="selecteduser-info">
+            <h2>
+                Character Information - {selectedCharachter.citizenid} ({selectedCharachter.charinfo.firstname} {selectedCharachter.charinfo.lastname})
+            </h2>
+            <p>This page displays information on a specific character. If nothing shows, go back to the Search Characters tab and try again.</p>
+            <br />
+            <div className="charinformation">
+                <div className="info-box">
+                    <h3><FontAwesomeIcon icon={faCircleInfo} style={{ marginRight: '18px' }}/>General Information</h3>
+                    <p>Character ID: {selectedCharachter.id}</p>
+                    <p>Owned By: {selectedCharachter.name}</p>
+                    <p>Citizen ID: {selectedCharachter.citizenid}</p>
+                    <p>Rockstar: {selectedCharachter.license}</p>
+                    <p>Discord ID: {discord}</p>
+                    <p>Last Played: {selectedCharachter.last_updated}</p>
+                </div>
+                <div className="info-box">
+                    <h3><FontAwesomeIcon icon={faAddressCard} style={{ marginRight: '18px' }}/>In-Character Information</h3>
+                    <p>Character Name: {selectedCharachter.charinfo.firstname} {selectedCharachter.charinfo.lastname}</p>
+                    <p>Nationality: <input type="text" className="input" value={selectedCharachter.charinfo.nationality} readOnly /></p>
+                    <p>Gender: {selectedCharachter.charinfo.gender === 0 ? "Male" : "Female"}</p>
+                    <p>Birthdate: {selectedCharachter.charinfo.birthdate}</p>
+                    <p>Phone Number: {selectedCharachter.charinfo.phone}</p>
+                    <p>Blood Type: {selectedCharachter.metadata.bloodtype}</p>
+                    <button onClick={() => handleOpenModal("phone")}>Save</button>
+                </div>
+                <div className="info-box">
+                    <h3><FontAwesomeIcon icon={faLandmark} style={{ marginRight: '18px' }}/>Banking Information</h3>
+                    <p>Bank: {selectedCharachter.money.bank?.toLocaleString()}$</p>
+                    <p>Cash: {selectedCharachter.money.cash?.toLocaleString()}$</p>
+                    <p>Crypto: {selectedCharachter.money.crypto?.toLocaleString()}₿</p>
+                    <button onClick={() => handleOpenModal("bank")}>Change Bank Amounts</button>
+                </div>
+                <div className="info-box">
+                    <h3><FontAwesomeIcon icon={faCar} style={{ marginRight: '18px' }}/>List of Vehicles</h3>
+                    <table className="player-table">
+                        <thead>
+                            <tr>
+                                <th>Vehicle Name</th>
+                                <th>Vehicle Plate</th>
+                                <th>Manage Vehicle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {vehicles.length > 0 ? (
+                                vehicles.map((vehicle, index) => (
+                                    <tr key={index}>
+                                        <td>{vehicle.name}</td>
+                                        <td>{vehicle.plate}</td>
+                                        <td><button onClick={() => handleOpenModal(`manageVehicle-${selectedCharachter.citizenid}-${vehicle.plate}`)}>Manage</button></td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="3">No data available in table</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
+export default ShowCharacterInformation
